@@ -1,0 +1,57 @@
+[General]
+Type=WinSock
+RecordedProtocol=
+DefaultCfg=default.cfg
+AppName=
+BuildTarget=
+ParamRightBrace=>
+ParamLeftBrace=<
+NewFunctionHeader=0
+LastActiveAction=vuser_init
+CorrInfoReportDir=
+LastResultDir=
+DevelopTool=Vugen
+MajorVersion=11
+MinorVersion=0
+ParameterFile=
+GlobalParameterFile=
+LastModifyVer=11.0.0.0
+[TransactionsOrder]
+Order=""
+[ExtraFiles]
+data.ws=
+[Actions]
+vuser_init=vuser_init.c
+Action=Action.c
+vuser_end=vuser_end.c
+[Recorded Actions]
+vuser_init=0
+Action=0
+vuser_end=0
+[Replayed Actions]
+vuser_init=0
+Action=0
+vuser_end=0
+[Modified Actions]
+vuser_init=1
+Action=0
+vuser_end=0
+[ProtocolsVersion]
+WinSock=11.0.0.0
+[RunLogicFiles]
+Default Profile=default.usp
+[StateManagement]
+1=1
+7=0
+8=0
+9=0
+10=0
+11=0
+12=0
+17=0
+18=0
+20=0
+21=0
+CurrentState=1
+VuserStateHistory= 0
+LastReplayStatus=0
