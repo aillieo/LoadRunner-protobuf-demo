@@ -1,0 +1,13 @@
+#VuGen
+*.bak
+*.log
+*.idx
+lr_pb/result1/*
+*.txt
+lr_pb/
+pre_cci.c
+lr_pb.ci
+combined_lr_pb.c
+
+
+#c++
