@@ -7,7 +7,7 @@ BuildTarget=
 ParamRightBrace=>
 ParamLeftBrace=<
 NewFunctionHeader=0
-LastActiveAction=vuser_init
+LastActiveAction=Action
 CorrInfoReportDir=
 LastResultDir=
 DevelopTool=Vugen
@@ -34,7 +34,7 @@ Action=0
 vuser_end=0
 [Modified Actions]
 vuser_init=1
-Action=0
+Action=1
 vuser_end=0
 [ProtocolsVersion]
 WinSock=11.0.0.0
@@ -53,5 +53,5 @@ Default Profile=default.usp
 20=0
 21=0
 CurrentState=1
-VuserStateHistory= 0
+VuserStateHistory= 0 65552
 LastReplayStatus=0

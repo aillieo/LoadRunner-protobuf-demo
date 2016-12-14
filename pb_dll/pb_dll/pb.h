@@ -20,4 +20,4 @@ int constructMessage(char* des , short nType, int nIndex, const std::string &dat
 
 extern "C" DLL_API int getSerializedName(char* des, char* name);
 
-extern "C" DLL_API int getParsedName(char* name, char* src);
+extern "C" DLL_API int getParsedName(char* name, char* src, int len);

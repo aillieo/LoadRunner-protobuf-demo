@@ -59,12 +59,12 @@ DLL_API int getSerializedName(char* des, char* name)
 
 }
 
-DLL_API int getParsedName(char* name, char* src)
+DLL_API int getParsedName(char* name, char* src, int len);
 {
 
-	int len;
+	int ret;
 
 
-	return len ;
+	return ret ;
 
 }
