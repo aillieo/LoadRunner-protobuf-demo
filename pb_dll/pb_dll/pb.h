@@ -4,7 +4,7 @@
 
 //在dll项目外部使用时，用__declspec(dllimport)导入  
 
-//宏DLL_IMPLEMENT在TestDLL.cpp中定义  
+//宏DLL_IMPLEMENT在pb.cpp中定义  
 
 #ifdef DLL_IMPLEMENT  
 #define DLL_API __declspec(dllexport)  
@@ -14,7 +14,6 @@
 
 #include <string>
 
-// 通用
 int constructMessage(char* des , short nType, int nIndex, const std::string &dataStr);
 
 

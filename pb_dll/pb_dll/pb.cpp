@@ -1,4 +1,4 @@
-//注意此处的宏定义需要写在#include "TestDLL.h"之前 
+//注意此处的宏定义需要写在#include "pb.h"之前 
 
 //以完成在dll项目内部使用__declspec(dllexport)导出 
 
@@ -52,19 +52,35 @@ int constructMessage(char* des , short nType, int nIndex, const std::string &dat
 DLL_API int getSerializedName(char* des, char* name)
 {
 
-	int len;
+	//MsgName msgname; 
+	//msgname.set_name(name);
 
+	std::string s_data;
+	//msgname.SerializeToString(&s_data);
 
-	return len ;
+	int len = constructMessage(des, 0, 0, s_data);
+
+	return len;
 
 }
 
-DLL_API int getParsedName(char* name, char* src, int len);
+DLL_API int getParsedName(char* name, char* src, int len)
 {
 
-	int ret;
+	int offset = sizeof(short) + sizeof(int);
+
+	if(len<=offset) return -1;
+
+	std::string data;
+	data.assign(src + offset , len - offset);
 
 
-	return ret ;
+	//MsgName msgname; 
+	//if (!msgname.ParseFromString(data)) return -1;
+
+	//strcpy(name, msgname.get_name());
+
+	return 0 ;
 
 }
+
