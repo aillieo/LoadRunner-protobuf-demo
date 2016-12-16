@@ -1,0 +1,5 @@
+option optimize_for = LITE_RUNTIME;
+message MsgName
+{
+        required string name = 1;
+}
