@@ -15,6 +15,7 @@
 #include <string.h>  
 #include <stdio.h>
 
+#include "MsgName.pb.h"
 
 
 int constructMessage(char* des , short nType, int nIndex, const std::string &dataStr )
@@ -52,11 +53,11 @@ int constructMessage(char* des , short nType, int nIndex, const std::string &dat
 DLL_API int getSerializedName(char* des, char* name)
 {
 
-	//MsgName msgname; 
-	//msgname.set_name(name);
+	MsgName msgname; 
+	msgname.set_name(name);
 
 	std::string s_data;
-	//msgname.SerializeToString(&s_data);
+	msgname.SerializeToString(&s_data);
 
 	int len = constructMessage(des, 0, 0, s_data);
 
@@ -75,10 +76,11 @@ DLL_API int getParsedName(char* name, char* src, int len)
 	data.assign(src + offset , len - offset);
 
 
-	//MsgName msgname; 
-	//if (!msgname.ParseFromString(data)) return -1;
+	MsgName msgname; 
+	if (!msgname.ParseFromString(data)) return -1;
 
-	//strcpy(name, msgname.get_name());
+
+	strcpy(name, msgname.name().c_str());
 
 	return 0 ;
 
