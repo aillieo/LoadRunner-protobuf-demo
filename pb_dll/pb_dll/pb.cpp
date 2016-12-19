@@ -43,6 +43,7 @@ int constructMessage(char* des , short nType, int nIndex, const std::string &dat
 	pos += dataStr.length()*sizeof(char);
 
 
+	//返回构建完成的消息的长度
 	return pos;
 
 }
@@ -53,14 +54,21 @@ int constructMessage(char* des , short nType, int nIndex, const std::string &dat
 DLL_API int getSerializedName(char* des, char* name)
 {
 
+	// 声明一个MsgName
 	MsgName msgname; 
+
+	// 为其传入name字段
 	msgname.set_name(name);
 
 	std::string s_data;
+
+	// 序列化给s_data
 	msgname.SerializeToString(&s_data);
 
+	// 构建消息并传给des
 	int len = constructMessage(des, 0, 0, s_data);
 
+	// 返回构建成的消息的长度
 	return len;
 
 }
@@ -68,6 +76,7 @@ DLL_API int getSerializedName(char* des, char* name)
 DLL_API int getParsedName(char* name, char* src, int len)
 {
 
+	// 去掉消息前部的 nType 和 nIndex 的数据
 	int offset = sizeof(short) + sizeof(int);
 
 	if(len<=offset) return -1;
@@ -75,11 +84,13 @@ DLL_API int getParsedName(char* name, char* src, int len)
 	std::string data;
 	data.assign(src + offset , len - offset);
 
-
+	// 声明一个MsgName
 	MsgName msgname; 
+
+	// 从data反序列化
 	if (!msgname.ParseFromString(data)) return -1;
 
-
+	// 得到消息中的name并赋给name
 	strcpy(name, msgname.name().c_str());
 
 	return 0 ;

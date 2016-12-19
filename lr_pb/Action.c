@@ -15,6 +15,7 @@ Action()
 	
 	rece = (char*)malloc(1024 * sizeof(char));
 	sendStr = (char*)malloc(1024 * sizeof(char));
+	name = (char*)malloc(128 * sizeof(char));
 
 	receLen = getSerializedName(rece, "TestingName");
 
@@ -39,7 +40,7 @@ Action()
 
 	free(rece);
 	free(sendStr);
-
+	free(name);
 
 
 	lrs_close_socket("socket0");
